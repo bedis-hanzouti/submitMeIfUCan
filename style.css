@@ -1,0 +1,425 @@
+:root {
+  --bg: #ddb551;
+  --main-color: #51a1c4;
+  --red: #b13f54;
+  --black: #000000;
+  --white: #ffffff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+/* finish */
+.finish{
+  width:100%;
+  height:100%;
+  position:fixed;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.bkc{
+  background-color: white;
+  width:60%;
+  height:50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap:20px;
+  border-radius:40px;
+}
+.bkc img{
+  width:200px;
+  animation: bkcImg 2s linear infinite;
+}
+@keyframes bkcImg {
+  0%{
+    transform: translateY(0px);
+  }
+  25%{
+    transform: translateY(-10px);
+  }
+  50%{
+    transform: translateY(10px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+.bkc span{
+  font-size:18px;
+  width:80%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: center;
+}
+/* finish */
+
+/* .container */
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg);
+  cursor: url('./viruss.png') 20 20 ,default ;
+  padding-top:200px;
+  padding-bottom:200px;
+  gap:100px;
+}
+
+@media screen and (max-width:920px) {
+  .container{
+    gap:50px;
+    padding-top:300px;
+  }
+}
+
+/* form */
+
+.form{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  background-color: var(--main-color);
+  padding:50px 30px;
+  overflow-x: hidden;
+  border-radius: 80px;
+  border:4px dashed white;
+
+}
+
+input[type="text"]{
+  background-color: transparent;
+  border:none;
+  outline:none;
+  opacity:0 ;
+  height:35px;
+  width:100%;
+  transition:opacity .5s ease;
+  padding-left:10px;
+  border-radius: 10px;
+}
+.invalidInput{
+  border:3px solid red !important ;
+}
+.activeInput{
+  background-color: var(--bg) !important;
+  opacity: 1 !important;
+}
+.input{
+  position: relative;
+  margin-bottom:30px;
+}
+.input2{
+  width:100%;
+  display: none ;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom:40px;
+  gap:10px;
+  display: none;
+}
+.input2 label{
+  color:ghostwhite;
+  font-size: 20px;
+}
+.input2 select{
+  border:none;
+  outline:none;
+  width:100px;
+  height:30px;
+}
+.input label{
+  position:absolute;
+  cursor: pointer;
+  color:ghostwhite;
+  z-index: 100;
+  transition:all 1s ease-out;
+  left:50%;
+  top:0;
+  transform: translateX(-50%);
+  font-size: 20px;
+  width:100%;
+  text-align: center;
+}
+.input label:hover{
+  transform:translateX(-50%) scale(1.2) ;
+}
+.activeLabel{
+  left:50px !important;
+  top:-20px !important;
+  color:rgb(198, 198, 198);
+  transition:all 2s ease !important;
+  font-size: 16px !important;
+}
+.btn{
+  width:200px;
+  height:40px;
+  border-radius: 10px;
+  color:white;
+  background-color: var(--red);
+  margin: 0 auto;
+  cursor: pointer;
+  transition: 1s ease-out;
+  border:none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
+}
+.btn:hover{
+  transform: scale(1.2);
+}
+.inactiveBtn{
+  transform: translateX(-1000px);
+}
+.icon-syringe{
+  font-size: 20px;
+}
+.title{
+  position:absolute;
+  top:100px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color:black;
+  font-size: 40px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+/* form */
+
+.doraemon {
+  --size: 400px;
+  width: var(--size);
+  height: var(--size);
+  position: relative;
+  animation:doraemon 4s linear infinite;
+  transition: all 1s linear;
+}
+@keyframes doraemon {
+  0%{
+    transform: translateY(0);
+  }
+  25%{
+    transform: translateY(-30px);
+  }
+  75%{
+    transform: translateY(30px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+.angry{
+  width:100px;
+  z-index: 100;
+  position:absolute;
+  right:20%;
+  top:-20px;
+  transition: all .3s ease;
+  animation:angry 1s linear infinite;
+  transform: scale(1);
+  display: none;
+}
+@keyframes angry {
+  0%{
+  transform: scale(1);
+
+  }
+  50%{
+  transform: scale(1.2);
+
+  }
+  100%{
+  transform: scale(1);
+
+  }
+}
+
+.face {
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  border: 2px solid var(--black);
+  position: relative;
+  transition: background-color 1s ease;
+}
+
+.face:hover {
+  background-color: red;
+  transition: background-color 5s ease;
+}
+
+.white {
+  --size: 300px;
+  width: var(--size);
+  height: calc(var(--size) - 62px);
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - var(--size) / 2);
+  background-color: var(--white);
+  border-radius: 50%;
+  border: 2px solid var(--black);
+}
+
+.eye {
+  width: 100px;
+  height: 120px;
+
+  border-radius: 100%;
+  background-color: var(--white);
+  /* background-color: var(--red); */
+  border: 2px solid var(--black);
+  position: absolute;
+  top: -75px;
+}
+
+.eye.left {
+  left: calc(50% - 130px);
+}
+
+.eye.right {
+  right: calc(50% - 130px);
+}
+
+.eye-black {
+  /* --size: 60px; */
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: var(--black);
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - var(--size) / 2);
+  transform-origin: top;
+}
+
+.eye-black::after {
+  content: "";
+  --size: 10px;
+  /* --size: 20px; */
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: var(--white);
+  position: absolute;
+  left: 10px;
+  top: calc(50% - 10px);
+}
+
+.nose {
+  --size: 40px;
+  /* --size: 60px; */
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--red);
+  border: 2px solid var(--black);
+  border-radius: 50%;
+  position: absolute;
+  left: calc(50% - var(--size) / 2);
+  top: 50px;
+}
+
+.nose::after {
+  --size: 10px;
+  content: "";
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: var(--white);
+  position: absolute;
+  top: 10px;
+  left: 20%;
+}
+
+.mouth {
+  --size: 20px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  border: 2px solid var(--black);
+  position: absolute;
+  bottom: 90px;
+  left: calc(50% - var(--size) / 2);
+  background-color: var(--red);
+  transform-origin: top;
+  transition: all 1s ease;
+}
+
+.face:hover .mouth {
+  border-bottom: 0px;
+  width: calc(var(--size) * 6);
+  left: calc(50% - var(--size) * 6 / 2);
+  transition: all 4s ease;
+}
+
+.mouth::before {
+  content: "";
+  width: 2px;
+  height: 30px;
+  background-color: var(--black);
+  position: absolute;
+  bottom: 70%;
+  left: calc(50% - 1px);
+  display: none;
+}
+
+.mustache {
+  position: absolute;
+  height: 2px;
+  width: 100px;
+  top: 120px;
+  background-color: var(--black);
+}
+
+.mustache.left {
+  left: 0px;
+  transform-origin: right;
+  transform: rotate(20deg);
+}
+
+.mustache.right {
+  right: 0px;
+  transform-origin: left;
+  transform: rotate(-20deg);
+}
+
+.mustache.two {
+  top: 145px;
+}
+
+.mustache.three {
+  top: 170px;
+}
+
+.mustache.left.two {
+  left: -10px;
+  transform: rotate(0deg);
+}
+
+.mustache.left.three {
+  left: 0px;
+  transform: rotate(-20deg);
+}
+
+.mustache.right.two {
+  right: -10px;
+  transform: rotate(0deg);
+}
+
+.mustache.right.three {
+  right: 0px;
+  transform: rotate(20deg);
+}
